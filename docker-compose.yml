@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+ saap:
+   build: .
+   networks:
+      - saap_app
+   volumes:
+      - myapp:/app
+   ports:
+     - "8012:8000"
+   restart: always 
+volumes:
+  myapp:
+   # external: true
+networks:
+  saap_app:
+   name: saap_app_network
